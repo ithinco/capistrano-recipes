@@ -40,4 +40,7 @@
     git commit -m '更新部署脚本'
     git push origin master
 
+    # 设置服务器相关环境, 该操作会将 config/database.yml 上传到服务器, 操作前需修改好database.yml配置, 不需要提交到版本控制
+    cap deploy:setup
+
     cap deploy
