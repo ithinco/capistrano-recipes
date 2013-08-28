@@ -44,6 +44,9 @@
     cap deploy:setup
 
     cap deploy
+    
+    # 到线上服务器重启nginx
+    sudo /etc/init.d/nginx restart
 
 
 > 参考资料
