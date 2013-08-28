@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>系统维护中</title>
+    <style type="text/css">
+    body {
+        width: 400px;
+        margin: 100px auto;
+        font: 300 120% "OpenSans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+    </style>
+</head>
+<body>
+    <h1>系统维护中</h1>
+
+    <p>我们的服务因为<%= reason ? reason : "系统维护" %><br>
+           暂时关闭: <%= Time.now.strftime("%H:%M %Z") %>.</p>
+
+    <p>我们将<%= deadline ? deadline : "很快" %>恢复.</p>
+</body>
+</html>
