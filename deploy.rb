@@ -10,7 +10,7 @@ set :bundle_without,  [:development, :test]
 ###############
 
 set :server_ip,  '192.168.0.2'    #服务器地址
-set :user,       'deploy'
+set :user,       'deploy'         #服务器部署用户
 set :app_name,   'app_name'       #应用程序名称, 一般可以用git项目名称
 set :host_name,  'host.com'       #nginx配置文件域名
 set :git_server, 'git.inspiry.cn' #GIT服务器地址

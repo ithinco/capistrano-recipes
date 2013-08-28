@@ -24,7 +24,17 @@
     cp -r ~/Downloads/capistrano-recipes/recipes /path/to/rails/config
     cp ~/Downloads/capistrano-recipes/deploy.rb /path/to/rails/config
 
-## 4. 提交并部署
+## 4. 修改部署变量
+  
+    set :server_ip,  '192.168.0.2'    #服务器地址
+    set :user,       'deploy'         #服务器部署用户
+    set :app_name,   'app_name'       #应用程序名称, 一般可以用git项目名称
+    set :host_name,  'host.com'       #nginx配置文件域名
+    set :git_server, 'git.inspiry.cn' #GIT服务器地址
+    set :git_repo,   "git@#{git_server}:rails/#{app_name}.git"
+
+
+## 5. 提交并部署
 
     git add .
     git commit -m '更新部署脚本'
