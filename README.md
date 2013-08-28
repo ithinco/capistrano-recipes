@@ -44,3 +44,16 @@
     cap deploy:setup
 
     cap deploy
+
+
+> 参考资料
+
+> [https://github.com/capistrano/capistrano/wiki/Capistrano-Tasks](https://github.com/capistrano/capistrano/wiki/Capistrano-Tasks)
+
+> [http://railscasts.com/episodes/335-deploying-to-a-vps](http://railscasts.com/episodes/335-deploying-to-a-vps)
+
+> [http://railscasts.com/episodes/337-capistrano-recipes](http://railscasts.com/episodes/337-capistrano-recipes)
+
+> [http://railscasts.com/episodes/373-zero-downtime-deployment](http://railscasts.com/episodes/373-zero-downtime-deployment)
+
+> [https://help.github.com/articles/deploying-with-capistrano](https://help.github.com/articles/deploying-with-capistrano)
