@@ -61,6 +61,12 @@ set :unicorn_workers, 1
 # 配置维护页面模板地址
 set :maintenance_template_path, File.expand_path("../recipes/templates/maintenance.html.erb", __FILE__)
 
+# # delayed_job
+# require "delayed/recipes"
+# after "deploy:stop",    "delayed_job:stop"
+# after "deploy:start",   "delayed_job:start"
+# after "deploy:restart", "delayed_job:restart"
+
 # 重启时开启 维护界面
 before "deploy:restart", "deploy:web:disable"
 after "deploy:restart", "deploy:web:enable"
