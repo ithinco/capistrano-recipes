@@ -21,8 +21,9 @@
 ## 3. 拷贝文件到项目中
 
     git clone git@github.com:fiberead/capistrano-recipes.git ~/Downloads/capistrano-recipes
-    cp -r ~/Downloads/capistrano-recipes/recipes /path/to/rails/config
-    cp ~/Downloads/capistrano-recipes/deploy.rb /path/to/rails/config
+    # /path/to/rails/config
+    cp -r ~/Downloads/capistrano-recipes/recipes ./config 
+    cp ~/Downloads/capistrano-recipes/deploy.rb ./config 
 
 ## 4. 修改部署变量
   
