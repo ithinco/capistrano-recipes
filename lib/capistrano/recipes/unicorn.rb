@@ -12,8 +12,8 @@ Capistrano::Configuration.instance.load do
       template "unicorn.rb.erb", unicorn_config
       template "unicorn_init.erb", "/tmp/unicorn_init"
       run "chmod +x /tmp/unicorn_init"
-      run "#{try_sudo} mv /tmp/unicorn_init /etc/init.d/unicorn_#{application}"
-      # run "#{try_sudo} update-rc.d -f unicorn_#{application} defaults"
+      run "#{sudo} mv /tmp/unicorn_init /etc/init.d/unicorn_#{application}"
+      run "#{sudo} update-rc.d -f unicorn_#{application} defaults"
     end
     after "deploy:setup", "unicorn:setup"
 
