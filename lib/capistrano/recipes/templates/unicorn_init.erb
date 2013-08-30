@@ -50,7 +50,7 @@ force-stop)
   echo >&2 "Not running"
   ;;
 restart)
-  sig USR2 && sleep 5 && oldsig QUIT && echo "Killing old master" `cat $OLD_PID` && exit 0
+  sig USR2 && sleep 5 && oldsig QUIT && echo "Killing old master" `cat $OLD_PIN` && exit 0
   echo >&2 "Couldn't restart, starting '$CMD' instead"
   run $CMD
   ;;
