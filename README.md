@@ -81,8 +81,8 @@
     # 开始unicorn进程数
     set :unicorn_workers, 1
 
-    # 配置维护页面模板地址
-    set :maintenance_template_path, File.expand_path("../recipes/templates/maintenance.html.erb", __FILE__)
+    # 更改维护页面模板地址
+    # set :maintenance_template_path, File.expand_path("../recipes/templates/maintenance.html.erb", __FILE__)
 
     # # delayed_job
     # require "delayed/recipes"
