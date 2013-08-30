@@ -8,8 +8,10 @@ def set_default(name, *args, &block)
 end
 
 Capistrano::Configuration.instance.load do
-  set :maintenance_template_path, File.expand_path("../recipes/templates/maintenance.html.erb", __FILE__)
   
+  # 设置默认的维护界面
+  set :maintenance_template_path, File.expand_path("../templates/maintenance.html.erb", __FILE__)
+
   namespace :deploy do
     desc "Install everything onto the server"
     task :install do
