@@ -7,7 +7,7 @@
     
     group :development do
       gem 'capistrano'
-      gem 'capistrano-recipes'
+      gem 'capistrano-recipes', github: 'fiberead/capistrano-recipes'
     end
     group :assets do
       gem 'execjs'
@@ -32,10 +32,10 @@
     # 需要更新配置
     ###############
 
-    set :server_ip,  '106.187.99.82'    #服务器地址
+    set :server_ip,  '192.168.0.2'    #服务器地址
     set :user,       'deploy'          #服务器部署用户
-    set :app_name,   'culater'          #应用程序名称, 一般可以用git项目名称
-    set :host_name,  'cu.gontou.co'     #nginx配置文件域名
+    set :app_name,   'app_name'          #应用程序名称, 一般可以用git项目名称
+    set :host_name,  'host.name'     #nginx配置文件域名
     set :git_server, 'github.com' #GIT服务器地址
     set :git_repo,   "git@#{git_server}:huaican/#{app_name}.git"
 
