@@ -1,10 +1,3 @@
-
-require "benchmark"
-require "set"
-require "shellwords"
-require "yaml"
-
-
 def template(from, to)
   erb = File.read(File.expand_path("../templates/#{from}", __FILE__))
   put ERB.new(erb).result(binding), to
@@ -15,6 +8,8 @@ def set_default(name, *args, &block)
 end
 
 Capistrano::Configuration.instance.load do
+  set :maintenance_template_path, File.expand_path("../recipes/templates/maintenance.html.erb", __FILE__)
+  
   namespace :deploy do
     desc "Install everything onto the server"
     task :install do
