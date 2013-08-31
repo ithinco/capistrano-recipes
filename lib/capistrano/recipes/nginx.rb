@@ -1,5 +1,7 @@
 
 Capistrano::Configuration.instance.load do
+  set_default(:supported_old_msie) { true }
+
   namespace :nginx do
     desc "Install latest stable release of nginx"
     task :install, roles: :web do
@@ -21,7 +23,7 @@ Capistrano::Configuration.instance.load do
     %w[start stop restart].each do |command|
       desc "#{command} nginx"
       task command, roles: :web do
-        run "#{sudo} service nginx #{command}"
+        run "#{sudo} /etc/init.d/nginx #{command}"
       end
     end
   end

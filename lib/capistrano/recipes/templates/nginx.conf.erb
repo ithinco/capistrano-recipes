@@ -22,6 +22,13 @@ server {
       rewrite  ^(.*)$  /system/maintenance.html break;
       break;
     }
+
+    <% unless supported_old_msie %>
+    if ($http_user_agent ~ (MSIE\ 6|MSIE\ 7|MSIE\ 8)) {
+      rewrite ^ /unsupported_browser.html;
+      break;
+    }
+    <% end %>
     
     client_max_body_size 200m;
 
