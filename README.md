@@ -6,12 +6,7 @@
 ## 2. 修改 Gemfile
     
     group :development do
-      gem 'capistrano'
       gem 'capistrano-recipes', github: 'fiberead/capistrano-recipes'
-    end
-    group :assets do
-      gem 'execjs'
-      gem 'therubyracer', :platforms => :ruby
     end
 
 ## 3. 保证项目配置正确
@@ -38,6 +33,9 @@
     set :host_name,  'host.name'     #nginx配置文件域名
     set :git_server, 'github.com' #GIT服务器地址
     set :git_repo,   "git@#{git_server}:huaican/#{app_name}.git"
+
+    # nginx 屏蔽IE8以下的请求, 转跳到 /unsupported_browser.html
+    # set :supported_old_msie, false
 
     ###############
 
@@ -89,6 +87,10 @@
     # after "deploy:stop",    "delayed_job:stop"
     # after "deploy:start",   "delayed_job:start"
     # after "deploy:restart", "delayed_job:restart"
+
+    # 强制重启unicorn
+    after "deploy:restart", "unicorn:stop"
+    after "deploy:restart", "unicorn:start"
 
     # 重启时开启 维护界面
     before "deploy:restart", "deploy:web:disable"
