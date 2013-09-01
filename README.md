@@ -6,6 +6,8 @@
 ## 2. 修改 Gemfile
     
     group :development do
+      gem 'capistrano'
+      gem 'rvm-capistrano'
       gem 'capistrano-recipes', github: 'fiberead/capistrano-recipes'
     end
 
