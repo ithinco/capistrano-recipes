@@ -24,7 +24,7 @@ server {
     }
 
     <% unless supported_old_msie %>
-    if ($http_user_agent ~ (MSIE\ 6|MSIE\ 7|MSIE\ 8)) {
+    if ($http_user_agent ~ (MSIE\ 6|MSIE\ 7)) {
       rewrite ^ /unsupported_browser.html;
       break;
     }
