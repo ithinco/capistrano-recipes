@@ -1,10 +1,6 @@
 
 upstream <%=application %> {
-    <% if rails_server == 'puma' %>
-    server unix:<%=current_path %>/tmp/sockets/puma.socket;
-    <% else %>
     server unix:<%=current_path %>/tmp/.socket;
-    <% end %>
 }
 
 server {
